@@ -12,7 +12,7 @@
     "watch": "nodemon server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "anthowelc",
+  "author": "spiritcodefire",
   "license": "ISC",
   "dependencies": {
     "dotenv": "^8.2.0",
