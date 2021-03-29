@@ -3,7 +3,7 @@ import passport from 'passport' ;
 
 import jwt from 'jsonwebtoken' ; 
 import { catchErrors } from '../helpers.js' ;
-import { getRooms, getRoom, addRoom, deleteRoom, updateRoom } from '../controllers/roomControllers.js' ;
+import { getRooms, getRoom } from '../controllers/roomControllers.js' ;
 
 // Path avec ES module
 import path, { dirname } from 'path' ;
@@ -17,11 +17,7 @@ router.get('/api/rooms', catchErrors(getRooms))
 
 router.get('/api/rooms/:id', catchErrors(getRoom))
 
-router.post('/api/rooms', catchErrors(addRoom))
 
-router.patch('/api/rooms/:id', catchErrors(updateRoom))
-
-router.delete('/api/rooms/:id', catchErrors(deleteRoom))
 
 // Authentification
 router.post(

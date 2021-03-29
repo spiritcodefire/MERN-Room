@@ -2,11 +2,11 @@ GET http://localhost:5000/api/rooms
 
 ###
 
-POST http://localhost:5000/api/rooms HTTP/1.1
+POST http://localhost:5000/private/api/rooms?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYwNjIxNjI5OWExMzU4MmQ3NGJjZjIwMCIsImVtYWlsIjoidGVzdDNAdGVzdC5jb20ifSwiaWF0IjoxNjE3MDUxNzMwfQ.ZOxUog_9J6arR4XatdDUNlDZCRS57YfURuqNznZCEHk HTTP/1.1
 content-type: application/json
 
 {
-  "name": "Basic"
+  "name": "Basic test 2 "
 }
 
 ###
@@ -41,3 +41,8 @@ content-type: application/json
   "email": "test3@test.com",
   "password" : "azerty"
 }
+
+
+###
+
+GET http://localhost:5000/private/secret?token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7Il9pZCI6IjYwNjIxNjI5OWExMzU4MmQ3NGJjZjIwMCIsImVtYWlsIjoidGVzdDNAdGVzdC5jb20ifSwiaWF0IjoxNjE3MDUxNzMwfQ.ZOxUog_9J6arR4XatdDUNlDZCRS57YfURuqNznZCEHk

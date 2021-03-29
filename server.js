@@ -1,6 +1,8 @@
 import express from 'express'
 import mongoose from 'mongoose'
 import routes from './routes/routes.js'
+import privateRoutes from './routes/privateRoutes.js'
+import passport from 'passport'
 import './auth/auth.js'
 import dotenv from 'dotenv'
 dotenv.config()
@@ -19,6 +21,10 @@ mongoose.connect(process.env.MONGODB, {
   useFindAndModify: false,
   useCreateIndex: true
 })
+
+
+// les privatesRoutes doivent être situés au dessus des routes, sinon il pourrait y acceder par routes
+app.use('/private', passport.authenticate('jwt', {session: false}), privateRoutes)
 
 app.use(routes)
 
