@@ -1,6 +1,7 @@
 import express from 'express'
 import mongoose from 'mongoose'
 import routes from './routes/routes.js'
+import './auth/auth.js'
 import dotenv from 'dotenv'
 dotenv.config()
 
@@ -15,7 +16,8 @@ app.use(express.static('client/build'))
 mongoose.connect(process.env.MONGODB, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-  useFindAndModify: false
+  useFindAndModify: false,
+  useCreateIndex: true
 })
 
 app.use(routes)
