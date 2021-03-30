@@ -22,7 +22,6 @@ mongoose.connect(process.env.MONGODB, {
   useCreateIndex: true
 })
 
-
 // les privatesRoutes doivent être situés au dessus des routes, sinon il pourrait y acceder par routes
 app.use('/private', passport.authenticate('jwt', {session: false}), privateRoutes)
 

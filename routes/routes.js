@@ -17,11 +17,8 @@ router.get('/api/rooms', catchErrors(getRooms))
 
 router.get('/api/rooms/:id', catchErrors(getRoom))
 
-
-
 // Authentification
-router.post(
-  '/signup', 
+router.post('/signup', 
 passport.authenticate('signup', { session: false} ),
  async(req, res, next ) =>{
    res.json({
@@ -42,7 +39,7 @@ router.post('/login',(req, res, next) => {
       req.login(user, {session: false}, async error =>{
         if(error) return next(error)
         const body = { _id: user._id, email: user.email }
-        const token = jwt.sign({ user: body }, 'SECRET_KET_A_MODIFIER')
+        const token = jwt.sign({ user: body }, 'SECRET_KEY_A_MODIFIER')
         res.json({ token, body})
       })
     }catch (error) {
@@ -51,7 +48,7 @@ router.post('/login',(req, res, next) => {
   })(req, res, next)
 })
 
-//  spécifique pour brancher React // veut dire que
+//  spécifique pour brancher React 
 router.get('/*', (_, res) => {
   res.sendFile(path.join(__dirname, '../client/build/index.html'))
 })

@@ -62,7 +62,7 @@ passport.use(
 passport.use(
     new JWTstrategy(
         {
-            secretOrKey: 'SECRET_KET_A_MODIFIER',
+            secretOrKey: 'SECRET_KEY_A_MODIFIER',
             jwtFromRequest: ExtractJwt.fromUrlQueryParameter('token')   // jwtfromRequest = recuperer le token depuis une requete ----> grace à la méthode extractJWT qui sera passé en paramètre ( mon adress avec ?), le nom de se paramètre sera token comme marqué à l'interieur
         },
         async (token, done) => {

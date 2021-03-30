@@ -13,7 +13,7 @@ router.delete('/api/rooms/:id', catchErrors(deleteRoom))
 
 router.get('/secret', (req, res) => {
     res.json({
-        message: ' connexion secret réussi', 
+        message: 'connexion secret réussi', 
         user : req.user,
         token: req.query.token // .query parce qu'on la appelé token et qu'on le récupère de la query
     })
